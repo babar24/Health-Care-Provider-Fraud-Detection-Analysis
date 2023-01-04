@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <title>Medical Provider Fraud detection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+.container {
+    text-align: center;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #B2BEB5;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+
+</head>
+
+<body style="background-color:#E5E4E2;">
+<div class="header">
+  <a href="#default" class="logo">MEDICAL PROVIDER FRAUD DETECTION</a>
+  <div class="header-right">
+    <a class="active" href= "{{url_for('Home') }}">Home</a>
+  </div>
+</div>
+
+<h3> Introduction About Health Care Fraud </h3>
+<p>Health care fraud is an organized crime which involves peers of providers, physicians, beneficiaries acting together knowingly mis-representing or mis-stating something about the type, the scope, or the nature of the medical treatment or service provided, in a manner that could result in unauthorized payments(fraud claims) being made. Fraud and abuse have led to significant additional expenses in the health care systems. Insurance companies are the most vulnerable institutions impacted due to these bad practices. Due to this reason, insurance companies increased their insurance premiums and as result healthcare is becoming a costly matter day by day. Healthcare fraud and abuse take many forms. Some of the most common types of frauds by providers are:<br>
+i) Billing for services that were not provided.<br>
+ii) Duplicate submission of a claim for the same service.<br>
+iii) Misrepresenting the service provided.<br>
+iv) Charging for a more complex or expensive service than was actually provided.<br>
+v) Billing for a covered service when the service actually provided was not covered.<br></p>
+
+
+<h3> Business Problem </h3>
+<p>i) <u>Goal Setting</u>:  Predict the potentially fraudulent providers based on the claims filed by them.<br>
+ii) <u>Tasks</u>:<br>
+     1. To identify important variables/features which help in detecting the behavior of potentially fraud providers.<br>
+     2. To understand future behavior of providers by identifying fraudulent patterns in the provider's claims.<br>
+</p>
+
+<h3> Objective </h3>
+<p>To design a binary classification model which predicts if a claim applied by providers is fraud or legitimate based on the beneficiary details, inpatient and outpatient data.
+</p>
+
+<h3> Business Contrainsts </h3>
+<p>The business constraints are as follows:<br>
+i) <u>Misclassifications</u>: The Cost of misclassification is high as seen from the confusion matrix. If FN are high means we are predicting the 
+fraudulent claims as legitimate and if FP are high means we are predicting the legitimate claims as fraudulent.<br>
+ii) <u>Cost of Misclassifications</u>: Higher FN and FP will result in cost involved to further drill down if actually a claim is fraud or not
+by further investigation. If FN is high Cost will be reimbursed for fraud claims and if FP is high then additional cost of investigation is added
+ to it.<br>
+iii) <u>Latency Requirement</u>: Since the claim reimbursement process takes time means there is no such latency requirement. But still we will 
+consider reducing the training time of model.<br>
+</p>
+
+
+
+</body>
+</html>
